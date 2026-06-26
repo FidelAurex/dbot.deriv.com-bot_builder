@@ -11,6 +11,7 @@ import {
 } from '@/utils/live-branding-store';
 import { isPreviewMode } from '@/utils/is-preview-mode';
 import { getAppName, LOGO_CANDIDATES } from '../../../utils/branding';
+import { DerivBotWordmark } from './DerivBotWordmark';
 
 type TLogoMarkProps = {
     height?: number;
@@ -43,38 +44,30 @@ export const LogoMark = ({ height = 32 }: TLogoMarkProps) => {
     return (
         <span className='app-header__logo-mark'>
             {logoSrc ? (
-                <img
-                    data-logo
-                    src={logoSrc}
-                    alt={appName}
-                    className='app-header__logo-img'
-                    style={{ height: `${height}px` }}
-                    onError={() => setCandidateIndex((index) => index + 1)}
-                />
+                <>
+                    <img
+                        data-logo
+                        src={logoSrc}
+                        alt={appName}
+                        className='app-header__logo-img'
+                        style={{ height: `${height}px` }}
+                        onError={() => setCandidateIndex((index) => index + 1)}
+                    />
+                    <span className='app-header__logo-text'>{appName}</span>
+                </>
             ) : isDerivBot ? (
-                <span
-                    className='app-header__logo-badge app-header__logo-badge--deriv-bot'
-                    style={{ height: `${height}px` }}
-                    aria-hidden='true'
-                >
-                    DB
-                </span>
+                <DerivBotWordmark />
             ) : (
-                <span
-                    className='app-header__logo-badge'
-                    style={{ height: `${height}px`, width: `${height}px` }}
-                    aria-hidden='true'
-                >
-                    {badgeLetter}
-                </span>
-            )}
-            {isDerivBot && !logoSrc ? (
-                <span className='app-header__logo-text app-header__logo-text--deriv-bot'>
-                    <span className='app-header__logo-text--deriv'>deriv</span>
-                    <span className='app-header__logo-text--bot'>Bot</span>
-                </span>
-            ) : (
-                <span className='app-header__logo-text'>{appName}</span>
+                <>
+                    <span
+                        className='app-header__logo-badge'
+                        style={{ height: `${height}px`, width: `${height}px` }}
+                        aria-hidden='true'
+                    >
+                        {badgeLetter}
+                    </span>
+                    <span className='app-header__logo-text'>{appName}</span>
+                </>
             )}
         </span>
     );

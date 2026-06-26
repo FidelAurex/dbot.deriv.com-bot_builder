@@ -79,7 +79,7 @@
         "css_variable_prefix": "--brand"
     },
     "platform": {
-        "name": "tradershubbb",
+        "name": "Deriv Bot",
         "footer": {
             "enable_language_settings": false,
             "enable_theme_toggle": true

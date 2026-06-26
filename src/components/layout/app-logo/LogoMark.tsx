@@ -37,6 +37,7 @@ export const LogoMark = ({ height = 32 }: TLogoMarkProps) => {
 
     const appName = previewAppName || getAppName();
     const logoSrc = candidateIndex < candidates.length ? candidates[candidateIndex] : null;
+    const isDerivBot = appName === 'Deriv Bot';
     const badgeLetter = appName.trim().charAt(0).toUpperCase() || 'A';
 
     return (
@@ -50,6 +51,14 @@ export const LogoMark = ({ height = 32 }: TLogoMarkProps) => {
                     style={{ height: `${height}px` }}
                     onError={() => setCandidateIndex((index) => index + 1)}
                 />
+            ) : isDerivBot ? (
+                <span
+                    className='app-header__logo-badge app-header__logo-badge--deriv-bot'
+                    style={{ height: `${height}px` }}
+                    aria-hidden='true'
+                >
+                    DB
+                </span>
             ) : (
                 <span
                     className='app-header__logo-badge'
@@ -59,7 +68,14 @@ export const LogoMark = ({ height = 32 }: TLogoMarkProps) => {
                     {badgeLetter}
                 </span>
             )}
-            <span className='app-header__logo-text'>{appName}</span>
+            {isDerivBot && !logoSrc ? (
+                <span className='app-header__logo-text app-header__logo-text--deriv-bot'>
+                    <span className='app-header__logo-text--deriv'>deriv</span>
+                    <span className='app-header__logo-text--bot'>Bot</span>
+                </span>
+            ) : (
+                <span className='app-header__logo-text'>{appName}</span>
+            )}
         </span>
     );
 };

@@ -11,7 +11,6 @@ import { useStore } from '@/hooks/useStore';
 import { navigateToTransfer } from '@/utils/transfer-utils';
 import { Localize } from '@deriv-com/translations';
 import { Header, useDevice, Wrapper } from '@deriv-com/ui';
-import { BrandDerivLogoWhiteCoralIcon } from '@deriv/quill-icons/Logo';
 import { AppLogo } from '../app-logo';
 import AccountSwitcher from './account-switcher';
 import MenuItems from './menu-items';
@@ -228,12 +227,8 @@ const AppHeader = observer(() => {
             >
                 <Wrapper variant='left'>
                     <MobileMenu onLogout={handleLogout} />
-                    <a href='/' className='app-header__deriv-logo-link'>
-                        <BrandDerivLogoWhiteCoralIcon height={36} width={36} />
-                    </a>
-                    {isDesktop && <div className='app-header__nav-separator' />}
-                    {isDesktop ? <MenuItems /> : renderAccountSection('left')}
                     <AppLogo />
+                    {isDesktop ? <MenuItems /> : renderAccountSection('left')}
                 </Wrapper>
                 <Wrapper variant='right'>
                     {renderAccountSection('right')}

@@ -33,18 +33,6 @@
         font-weight: 700;
         font-size: 1.4rem;
         line-height: 1;
-
-        &--deriv-bot {
-            background: #ff444f;
-            color: #ffffff;
-            font-size: 1.1rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            padding: 0 0.6rem;
-            width: auto;
-            min-width: 32px;
-            border-radius: 0.6rem;
-        }
     }
 
     &__logo-text {
@@ -56,28 +44,6 @@
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 220px;
-
-        &--deriv-bot {
-            display: flex;
-            align-items: baseline;
-            gap: 0.3rem;
-            overflow: visible;
-        }
-
-        &--deriv {
-            font-style: italic;
-            font-weight: 700;
-            color: var(--text-general);
-            font-size: 1.8rem;
-            line-height: 1;
-        }
-
-        &--bot {
-            font-weight: 400;
-            color: var(--text-general);
-            font-size: 1.8rem;
-            line-height: 1;
-        }
     }
 
     // On mobile the mark sits next to the hamburger and the account section, so

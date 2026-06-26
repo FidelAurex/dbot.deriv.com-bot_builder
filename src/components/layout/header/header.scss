@@ -2,22 +2,6 @@
 @use 'components/shared/styles/mixins' as *;
 
 .app-header {
-    &__deriv-logo-link {
-        display: flex;
-        align-items: center;
-        padding-inline-start: 1.6rem;
-        padding-inline-end: 1.2rem;
-        flex-shrink: 0;
-    }
-
-    &__nav-separator {
-        width: 0.1rem;
-        height: 2.4rem;
-        background: var(--general-section-1);
-        margin-inline-end: 0.8rem;
-        flex-shrink: 0;
-    }
-
     &__account-settings {
         padding-inline-end: 1.2rem;
         border-inline-end: 0.1rem solid var(--general-section-1);

@@ -1,20 +1,20 @@
 {
-    "brand_name": "YourBrand",
-    "brand_domain": "yourbrand.com",
+    "brand_name": "Deriv Bot",
+    "brand_domain": "deriv.com",
     "brand_hostname": {
-        "staging": "staging.yourbrand.com/dashboard",
-        "production": "yourbrand.com/dashboard"
+        "staging": "staging-bot.deriv.com/dashboard",
+        "production": "bot.deriv.com/dashboard"
     },
-    "domain_name": "YourBrand.com",
+    "domain_name": "Deriv.com",
     "colors": {
-        "primary": "#ff0000",
-        "secondary": "#64748b",
-        "tertiary": "#8b5cf6",
-        "success": "#10b981",
-        "danger": "#ef4444",
-        "warning": "#f59e0b",
-        "info": "#0ea5e9",
-        "neutral": "#6b7280",
+        "primary": "#ff444f",
+        "secondary": "#6c717e",
+        "tertiary": "#5f6b7d",
+        "success": "#4bbd6f",
+        "danger": "#ec3c3c",
+        "warning": "#ffb81c",
+        "info": "#377cfc",
+        "neutral": "#999999",
         "black": "#0f172a",
         "white": "#ffffff",
         "grey": {
@@ -86,10 +86,10 @@
         },
         "hostname": {
             "production": {
-                "com": "bot.yourbrand.com"
+                "com": "bot.deriv.com"
             },
             "staging": {
-                "com": "staging-bot.yourbrand.com"
+                "com": "staging-bot.deriv.com"
             }
         },
         "auth2_url": {

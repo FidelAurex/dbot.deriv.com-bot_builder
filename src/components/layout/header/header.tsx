@@ -15,7 +15,6 @@ import { Header, useDevice, Wrapper } from '@deriv-com/ui';
 import { AppLogo } from '../app-logo';
 import AccountSwitcher from './account-switcher';
 import MenuItems from './menu-items';
-import MobileMenu from './mobile-menu';
 import './header.scss';
 
 const AppHeader = observer(() => {
@@ -233,7 +232,6 @@ const AppHeader = observer(() => {
                 })}
             >
                 <Wrapper variant='left'>
-                    <MobileMenu onLogout={handleLogout} />
                     {!isDesktop && (
                         <div className='dbot-mobile-brand' aria-label='Deriv Bot'>
                             <span className='dbot-mobile-brand__mark'>DB</span>

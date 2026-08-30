@@ -56,6 +56,13 @@ export default defineConfig({
       // the repo root, so a cwd-relative './node_modules/react' fails in CI).
       react: path.dirname(require.resolve('react/package.json')),
       'react-dom': path.dirname(require.resolve('react-dom/package.json')),
+      // Rsbuild's browser condition resolves react-dom/server to the wrapper
+      // module, which can produce an undefined Rspack factory in the preview.
+      // Point the client bundle at React DOM's browser CJS entry instead.
+      'react-dom/server': path.join(
+        path.dirname(require.resolve('react-dom/package.json')),
+        'cjs/react-dom-server-legacy.browser.development.js'
+      ),
       '@/external': path.resolve(__dirname, './src/external'),
       '@/components': path.resolve(__dirname, './src/components'),
       '@/hooks': path.resolve(__dirname, './src/hooks'),

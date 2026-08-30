@@ -22,6 +22,22 @@
     }
 
     // Letter-badge fallback shown when no logo file/data URL is available.
+    &__db-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        background: var(--brand-primary, #ff444f);
+        color: var(--general-main-1, #fff);
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -1px;
+        line-height: 1;
+    }
+
     &__logo-badge {
         display: flex;
         align-items: center;

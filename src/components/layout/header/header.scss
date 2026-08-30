@@ -255,6 +255,20 @@
 
 .auth-actions {
     display: flex;
+
+    .deposit-button {
+        background: var(--brand-primary, #ff444f);
+        color: var(--general-main-1, #fff);
+        border-color: var(--brand-primary, #ff444f);
+        font-weight: 700;
+        min-width: 12rem;
+        height: 4.8rem;
+        border-radius: 2.4rem;
+
+        &:hover {
+            background: var(--brand-primary, #ff444f);
+        }
+    }
     padding-block: 8px;
     align-items: center;
 

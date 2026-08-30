@@ -143,9 +143,10 @@ const AppHeader = observer(() => {
                             <Button
                                 primary
                                 disabled={client?.is_logging_out || !authData?.currency}
+                                className='deposit-button'
                                 onClick={handleTransfer}
                             >
-                                <Localize i18n_default_text='Transfer' />
+                                <Localize i18n_default_text='Deposit' />
                             </Button>
                         </div>
                     );

@@ -35,7 +35,7 @@ const DashboardComponent = observer(({ handleTabChange }: TMobileIconGuide) => {
                     )}
                     <div className='quick-panel'>
                         <div
-                            className={classNames('tab__dashboard__header', {
+                            className={classNames('tab__dashboard__header', 'tab__dashboard__header--deriv', {
                                 'tab__dashboard__header--listed': isDesktop && has_dashboard_strategies,
                             })}
                         >

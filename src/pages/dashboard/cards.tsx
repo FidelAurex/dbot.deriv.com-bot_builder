@@ -122,8 +122,10 @@ const Cards = observer(({ is_mobile, has_dashboard_strategies }: TCardProps) => 
                     {actions.map(icons => {
                         const { icon, content, callback, id } = icons;
                         return (
-                            <div
+                            <button
                                 key={id}
+                                type='button'
+                                aria-label={id}
                                 className={classNames('tab__dashboard__table__block', {
                                     'tab__dashboard__table__block--minimized': has_dashboard_strategies && is_mobile,
                                 })}
@@ -145,7 +147,7 @@ const Cards = observer(({ is_mobile, has_dashboard_strategies }: TCardProps) => 
                                 <Text color='prominent' size={is_mobile ? 'xxs' : 'xs'}>
                                     {content}
                                 </Text>
-                            </div>
+                            </button>
                         );
                     })}
 

@@ -317,7 +317,26 @@
                         border: 1px solid $color-grey-6;
                     }
 
-                    .load-strategy {
+.bot-list__wrapper {
+    width: 100%;
+}
+
+.bot-list__title {
+    margin-bottom: 2rem;
+    color: var(--text-general);
+}
+
+.bot-list__header,
+.bot-list__table > * {
+    border-bottom: 0.1rem solid var(--general-section-1);
+}
+
+.bot-list__header {
+    padding: 1.2rem 0;
+}
+
+.load-strategy {
+
                         &__preview-workspace {
                             &-container {
                                 position: relative;

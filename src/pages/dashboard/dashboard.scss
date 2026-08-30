@@ -138,6 +138,10 @@
                 text-align: center;
                 height: 7.2rem;
 
+                @include mobile-screen {
+                    display: none;
+                }
+
                 @include mobile-or-tablet-screen {
                     height: auto;
                 }
@@ -147,6 +151,12 @@
                 text-align: center;
                 margin-top: 1.6rem;
                 margin-bottom: 1rem;
+
+                @include mobile-screen {
+                    text-align: start;
+                    margin-top: 0;
+                    margin-bottom: 1.6rem;
+                }
 
                 &__has-list {
                     text-align: center;
@@ -330,7 +340,9 @@
                 padding: 2.2rem;
 
                 @include mobile-screen {
-                    flex-wrap: wrap;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    padding: 1.6rem 0.4rem 2rem;
                 }
 
                 @include tablet-screen {
@@ -358,15 +370,21 @@
                 opacity: 0.6;
             }
 
-            &__block {
-                @include flex-center;
+                &__block {
+                    @include flex-center;
 
-                flex-direction: column;
-                padding-inline-end: 4rem;
+                    flex-direction: column;
+                    padding-inline-end: 4rem;
 
-                @include mobile-or-tablet-screen {
-                    padding: 1rem;
-                }
+                    @include mobile-or-tablet-screen {
+                        padding: 1rem 0.4rem;
+                    }
+
+                    @include mobile-screen {
+                        flex: 1 1 0;
+                        min-width: 0;
+                    }
+
 
                 &:hover {
                     cursor: pointer;

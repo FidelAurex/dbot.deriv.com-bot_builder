@@ -36,9 +36,8 @@ type TCardArray = {
 };
 
 const Cards = observer(({ is_mobile, has_dashboard_strategies }: TCardProps) => {
-    const { dashboard, load_modal, quick_strategy, google_drive } = useStore();
+    const { dashboard, load_modal, quick_strategy } = useStore();
     const { toggleLoadModal, setActiveTabIndex } = load_modal;
-    const { is_google_drive_configured } = google_drive;
     const { isDesktop } = useDevice();
     const { onCloseDialog, dialog_options, is_dialog_open, setActiveTab, setPreviewOnPopup } = dashboard;
     const { setFormVisibility } = quick_strategy;
@@ -102,9 +101,7 @@ const Cards = observer(({ is_mobile, has_dashboard_strategies }: TCardProps) => 
                 /* [/AI] */
             },
         },
-    ]
-        // Hide the Google Drive tile when the feature isn't configured (no GD_* env vars).
-        .filter(action => action.id !== 'google-drive' || is_google_drive_configured);
+    ];
 
     return React.useMemo(
         () => (

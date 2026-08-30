@@ -89,6 +89,9 @@ importers:
       localforage:
         specifier: ^1.10.0
         version: 1.10.0
+      lodash.debounce:
+        specifier: ^4.0.8
+        version: 4.0.8
       lz-string:
         specifier: ^1.5.0
         version: 1.5.0

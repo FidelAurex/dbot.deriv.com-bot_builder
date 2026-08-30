@@ -214,6 +214,49 @@
     }
 }
 
+@include mobile-or-tablet-screen {
+    .main {
+        padding-bottom: 7.2rem;
+    }
+
+    .dc-tabs--main__tabs .dc-tabs__list {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 20;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        height: 7.2rem;
+        padding: 0.4rem 0.8rem 0;
+        border-top: 0.1rem solid var(--general-section-1);
+        background: var(--general-main-1);
+        box-shadow: 0 -0.2rem 0.8rem rgb(0 0 0 / 8%);
+    }
+
+    .dc-tabs--main__tabs .dc-tabs__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.3rem;
+        height: 6.4rem;
+        padding: 0.4rem;
+        border-radius: 0.8rem;
+        color: var(--text-general);
+        font-size: 1.2rem;
+        line-height: 1.2;
+        text-align: center;
+
+        svg {
+            margin: 0 auto;
+        }
+    }
+
+    .dc-tabs--main__tabs .dc-tabs__active {
+        color: var(--brand-danger);
+    }
+}
+
 .animation__wrapper {
     .animation {
         &__button#db-animation {

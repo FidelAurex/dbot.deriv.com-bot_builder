@@ -9,6 +9,7 @@ import { useApiBase } from '@/hooks/useApiBase';
 import { useLogout } from '@/hooks/useLogout';
 import { useStore } from '@/hooks/useStore';
 import { navigateToTransfer } from '@/utils/transfer-utils';
+import { standalone_routes } from '@/components/shared/utils/routes/routes';
 import { Localize } from '@deriv-com/translations';
 import { Header, useDevice, Wrapper } from '@deriv-com/ui';
 import { AppLogo } from '../app-logo';
@@ -116,6 +117,12 @@ const AppHeader = observer(() => {
             return;
         }
         navigateToTransfer(transferCurrency);
+    }, [authData?.currency]);
+
+    const handleDeposit = useCallback(() => {
+        const currency = authData?.currency;
+        const url = currency ? `${standalone_routes.cashier_deposit}?curr=${currency}` : standalone_routes.cashier_deposit;
+        window.open(url, '_blank', 'noopener,noreferrer');
     }, [authData?.currency]);
 
     const renderAccountSection = useCallback(
@@ -227,11 +234,22 @@ const AppHeader = observer(() => {
             >
                 <Wrapper variant='left'>
                     <MobileMenu onLogout={handleLogout} />
+                    {!isDesktop && (
+                        <div className='dbot-mobile-brand' aria-label='Deriv Bot'>
+                            <span className='dbot-mobile-brand__mark'>DB</span>
+                        </div>
+                    )}
                     <AppLogo />
                     {isDesktop ? <MenuItems /> : renderAccountSection('left')}
                 </Wrapper>
                 <Wrapper variant='right'>
-                    {renderAccountSection('right')}
+                    {!isDesktop && activeLoginid && !is_account_regenerating ? (
+                        <button type='button' className='dbot-mobile-deposit' onClick={handleDeposit}>
+                            <Localize i18n_default_text='Deposit' />
+                        </button>
+                    ) : (
+                        renderAccountSection('right')
+                    )}
                 </Wrapper>
             </Header>
         </>

@@ -151,6 +151,32 @@
         align-items: center;
     }
 
+    @include mobile-or-tablet-screen {
+        &__container--mobile {
+            position: fixed;
+            right: 0;
+            bottom: 7.2rem;
+            left: 0;
+            z-index: var(--zindex-drawer);
+            width: 100%;
+            height: auto;
+            background: var(--general-main-1);
+            border-top: 0.1rem solid var(--general-section-1);
+        }
+
+        .controls__section {
+            display: block;
+            width: 100%;
+            padding: 0.8rem 1.6rem;
+            background: var(--general-main-1);
+        }
+
+        .controls__buttons {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
     &-tab {
         &__content {
             height: calc(100vh - 42rem);

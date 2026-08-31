@@ -39,6 +39,7 @@ import { LegacyGuide1pxIcon } from '@deriv/quill-icons/Legacy';
 import { Localize, localize } from '@deriv-com/translations';
 import { useDevice } from '@deriv-com/ui';
 import RunPanel from '../../components/run-panel';
+import MobileMenu from '../../components/layout/header/mobile-menu';
 import ChartModal from '../chart/chart-modal';
 import Dashboard from '../dashboard';
 import RunStrategy from '../dashboard/run-strategy';
@@ -453,6 +454,11 @@ const AppWrapper = observer(() => {
                     </div>
                 </div>
             </div>
+            <MobileWrapper>
+                <div className='main__mobile-menu'>
+                    <MobileMenu onLogout={() => {}} />
+                </div>
+            </MobileWrapper>
             <DesktopWrapper>
                 <div className='main__run-strategy-wrapper'>
                     <RunStrategy />

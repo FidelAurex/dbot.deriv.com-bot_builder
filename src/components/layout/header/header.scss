@@ -3,7 +3,7 @@
 
 .app-header {
     @include mobile-screen {
-        min-height: 7.2rem;
+        min-height: 6.4rem;
         border-bottom: 0.4rem solid var(--general-section-1);
         background: var(--general-main-1);
 
